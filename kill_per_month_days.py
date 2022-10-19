@@ -16,5 +16,6 @@ shootings['day'] = shootings['date'].apply(lambda x: x.day)
 month_day = shootings.pivot_table(values=shootings, index='day', columns='month', aggfunc='count')['age']
 
 plt.figure(figsize=(10, 6))
-sns.heatmap(data=month_day, cmap='plasma')
+sns.heatmap(data=month_day, cmap='plasma', annot=True, linewidths=0.5)
+plt.title('Month_day')
 plt.show()
